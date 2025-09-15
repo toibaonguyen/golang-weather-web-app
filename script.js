@@ -9,33 +9,33 @@ const location_not_found = document.querySelector('.location-not-found');
 const weather_body = document.querySelector('.weather-body');
 
 
+const BASE_URL="http://localhost:8080"
 
-const API_KEY=""
 
 async function checkWeather(city){
-    const apiKey = API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+
+    const url = `${BASE_URL}?city=${city}`;
 
     const weather_data = await fetch(`${url}`).then(response => response.json());
     console.log("weather_data:",weather_data)
 
-    if(weather_data.cod === `404`){
+    if(weather_data.statusCode!="OK"){
         location_not_found.style.display = "flex";
         weather_body.style.display = "none";
         return;
     }
 
-    console.log("run");
     location_not_found.style.display = "none";
     weather_body.style.display = "flex";
-    temperature.innerHTML = `${Math.round(weather_data.main.temp - 273.15)}°C`;
-    description.innerHTML = `${weather_data.weather[0].description}`;
+    temperature.innerHTML = `${Math.round(weather_data.data.tempotary - 273.15)}°C`;
+    description.innerHTML = `${weather_data.data.description}`;
 
-    humidity.innerHTML = `${weather_data.main.humidity}%`;
-    wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;
+    humidity.innerHTML = `${weather_data.data.humidity}%`;
+    wind_speed.innerHTML = `${weather_data.data.windSpeed}Km/H`;
 
 
-    switch(weather_data.weather[0].main){
+    switch(weather_data.data.main){
         case 'Clouds':
             weather_img.src = "/assets/cloud.png";
             break;
@@ -51,6 +51,8 @@ async function checkWeather(city){
         case 'Snow':
             weather_img.src = "/assets/snow.png";
             break;
+        default:
+            weather_img.src = "/assets/clear.png";
 
     }
 
