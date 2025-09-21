@@ -1,29 +1,29 @@
 # 🌤️ Weather App
 
-Một ứng dụng web đơn giản hiển thị thông tin thời tiết theo thành phố,  
-được xây dựng bằng **vanilla Golang** cho backend API và **vanilla JavaScript** cho frontend.
+A simple web application that displays weather information by city,  
+built with **vanilla Golang** for the backend API and **vanilla JavaScript** for the frontend.
 
 ---
 
-## ✨ Tính năng
-- Tra cứu thời tiết theo tên thành phố.
-- Hiển thị nhiệt độ, điều kiện thời tiết, và icon minh họa.
-- Backend viết bằng **Go** (không dùng framework).
-- Frontend viết bằng **HTML + CSS + JS** (không dùng framework).
-- Kết nối tới OpenWeatherMap API (hoặc API thời tiết khác).
+## ✨ Features
+- Search for weather by city name.
+- Display temperature, weather conditions, and corresponding icons.
+- Backend built with **Go** (no frameworks).
+- Frontend built with **HTML + CSS + JS** (no frameworks).
+- Connects to OpenWeatherMap API (or any weather API).
 
 ---
 
-## 🛠️ Công nghệ sử dụng
+## 🛠️ Tech Stack
 ### Backend
-- [Golang](https://go.dev/) (phiên bản >= 1.24.2)  
-- HTTP server tích hợp sẵn (`net/http`).  
-- Go module để quản lý dependencies.  
+- [Golang](https://go.dev/) (version >= 1.20)  
+- Built-in HTTP server (`net/http`)  
+- Go modules for dependency management  
 
 ### Frontend
-- HTML5, CSS3 cơ bản.  
-- Vanilla JavaScript (`fetch` API để gọi backend).
+- HTML5, CSS3  
+- Vanilla JavaScript (`fetch` API for requests)  
 
-### Triển khai
-- Docker + Docker Compose để chạy toàn bộ app.  
-- Alpine Linux base image cho image nhỏ gọn.  
+### Deployment
+- Docker + Docker Compose to run the entire stack  
+- Lightweight images based on Alpine Linux  
