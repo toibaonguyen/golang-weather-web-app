@@ -16,7 +16,7 @@ built with **vanilla Golang** for the backend API and **vanilla JavaScript** for
 
 ## 🛠️ Tech Stack
 ### Backend
-- [Golang](https://go.dev/) (version >= 1.20)  
+- [Golang](https://go.dev/) (version >= 1.24.2)  
 - Built-in HTTP server (`net/http`)  
 - Go modules for dependency management  
 
