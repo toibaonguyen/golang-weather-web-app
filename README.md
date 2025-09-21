@@ -10,7 +10,7 @@ built with **vanilla Golang** for the backend API and **vanilla JavaScript** for
 - Display temperature, weather conditions, and corresponding icons.
 - Backend built with **Go** (no frameworks).
 - Frontend built with **HTML + CSS + JS** (no frameworks).
-- Connects to OpenWeatherMap API (or any weather API).
+- Connects to OpenWeatherMap API.
 
 ---
 
@@ -26,4 +26,4 @@ built with **vanilla Golang** for the backend API and **vanilla JavaScript** for
 
 ### Deployment
 - Docker + Docker Compose to run the entire stack  
-- Lightweight images based on Alpine Linux  
+- - Lightweight images (Alpine-based)  
