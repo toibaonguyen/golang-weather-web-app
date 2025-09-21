@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  client: 
+    build: ./client
+    container_name: weather-app-web
+    ports:
+      - "8081:8081"
+    depends_on:
+      - api
+
+  api:
+    build: ./server
+    container_name: weather-app-api
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - API_KEY=3326d532a08b27d3e69e62fef24f3b56

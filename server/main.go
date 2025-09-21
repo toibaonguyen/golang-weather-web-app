@@ -118,11 +118,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	apiKey := os.Getenv("API_KEY")
-	if apiKey == "" {
+	port := os.Getenv("PORT")
+	if apiKey == "" || port == "" {
 		fmt.Println("API_KEY environment variable not set.")
 		os.Exit(1)
 	}
 
 	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	fmt.Println("Server running on port: " + port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
